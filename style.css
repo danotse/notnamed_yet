@@ -1,0 +1,263 @@
+:root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #4ade80;
+    --danger: #fb7185;
+    --warning: #facc15;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   LEFT COLUMN (CONTENT)
+   ========================= */
+
+.story-column {
+    width: 50%;
+    padding: 3rem 2.5rem;
+}
+
+/* Section titles */
+.section-title {
+    margin: 6rem 0 2rem;
+}
+
+.section-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+/* Story steps */
+.step {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 2px solid #334155;
+    padding-left: 2rem;
+    opacity: 0.25;
+    transition: opacity 0.4s ease, border-color 0.4s ease;
+}
+
+.step h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.step p {
+    max-width: 42ch;
+    color: var(--muted);
+}
+
+.step em {
+    color: var(--text);
+}
+
+/* Active step */
+.step.active {
+    opacity: 1;
+    border-left-color: var(--accent);
+}
+
+/* Danger steps */
+.step.danger.active {
+    border-left-color: var(--danger);
+}
+
+.step.danger h2 {
+    color: var(--danger);
+}
+
+/* Safe steps */
+.step.safe.active {
+    border-left-color: var(--accent);
+}
+
+/* Examples & comfort text */
+.example {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--warning);
+}
+
+.comfort {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* =========================
+   CHECKLIST
+   ========================= */
+/* Add to your existing CSS */
+
+/* Checklist Styling */
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+.checklist h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Danger / Safe Steps Styling */
+.step.danger {
+    border-left-color: var(--danger);
+}
+.step.danger.active h2 {
+    color: var(--danger);
+}
+
+.step.safe {
+    border-left-color: var(--accent);
+}
+
+.code-block {
+    background: #000;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    margin-top: 1rem;
+    font-family: monospace;
+}
+
+
+.diagram-column {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diagram-stage {
+    text-align: center;
+}
+
+.network-map {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+}
+
+/* Wire & packet */
+.wire {
+    width: 220px;
+    height: 2px;
+    background: #475569;
+    position: relative;
+    transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.packet {
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    transition: left 1s ease-in-out, background 0.3s;
+}
+
+/* Icons */
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.icon-box span {
+    color: var(--muted);
+}
+
+
+#hacker {
+    color: var(--danger);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Status box */
+.status-box {
+    margin-top: 2rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    background: rgba(0, 0, 0, 0.35);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+}
+
+
+.state-dns .packet {
+    left: 50%;
+    background: var(--warning);
+}
+
+
+.state-arrived .packet {
+    left: 100%;
+}
+
+/* Attack */
+.state-attack .wire {
+    transform: rotate(8deg);
+    background: var(--danger);
+}
+
+.state-attack #hacker {
+    display: flex;
+}
+
+
+
+.closing {
+    margin: 6rem 0 3rem;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.closing .muted {
+    font-size: 0.95rem;
+    color: var(--muted);
+}

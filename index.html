@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple guide to how the internet works and how to stay safe.">
+    <title>The Internet, But Safely</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <article class="story-column">
+            
+            <header class="intro-spacer">
+                <h1>How the Internet Actually Works</h1>
+                <p class="subtitle">Scroll to start the journey ↓</p>
+            </header>
+
+            <section class="step" data-step="1">
+                <h2>1. You type a URL</h2>
+                <p>It starts with a request. You type <code>google.com</code>. Your computer doesn't know where that is yet.</p>
+            </section>
+
+            <section class="step" data-step="2">
+                <h2>2. The DNS Lookup</h2>
+                <p>Your computer asks the "Phonebook of the Internet" (DNS). <br><br><em>"Where is google.com?"</em></p>
+            </section>
+
+            <section class="step" data-step="3">
+                <h2>3. The Handshake</h2>
+                <p>The server replies. Your browser starts talking. If this line isn't encrypted (HTTP), anyone can listen in.</p>
+            </section>
+            
+            <section class="step danger" data-step="4">
+                <h2>4. The Attack</h2>
+                <p>Oh no! A "Man in the Middle" intercepts your request. This often happens on insecure public Wi-Fi.</p>
+            </section>
+
+            <section class="step danger" data-step="5">
+                <h2>5. Fake Websites (Phishing)</h2>
+                <p>
+                    Sometimes the server you reach isn’t the real one. It only <em>looks</em> right.  
+                    A single wrong letter can send your password to an attacker.
+                </p>
+                <div class="code-block error">
+                    <strong>Example:</strong> <code>g00gle.com</code> vs <code>google.com</code>
+                </div>
+            </section>
+            
+            <section class="step danger" data-step="6">
+                <h2>6. Weak Passwords</h2>
+                <p>
+                    If you reuse passwords, one leak unlocks everything. 
+                    Hackers don't guess passwords anymore; they reuse stolen ones.
+                </p>
+            </section>
+
+            <div class="section-divider">
+                <h2>The Defense</h2>
+            </div>
+
+            <section class="step safe" data-step="7">
+                <h2>7. HTTPS (The Shield)</h2>
+                <p>
+                    HTTPS encrypts the conversation. Even if a hacker intercepts it, they only see scrambled nonsense.
+                </p>
+                <p class="note">
+                    Note: Encryption hides <em>what</em> you say, not <em>who</em> you talk to.
+                </p>
+            </section>
+
+            <section class="checklist-section">
+                <h2>5 Things That Actually Keep You Safe</h2>
+                <ul class="checklist">
+                    <li>
+                        <h3><span class="check">✔</span> Use a Password Manager</h3>
+                        <p>It creates strong, unique passwords so you don’t have to remember them.</p>
+                    </li>
+                    <li>
+                        <h3><span class="check">✔</span> Enable 2FA</h3>
+                        <p>Two-Factor Authentication means even if they have your password, they can't get in.</p>
+                    </li>
+                    <li>
+                        <h3><span class="check">✔</span> Check the URL</h3>
+                        <p>Designs can be faked. The URL bar (google.com) cannot lie.</p>
+                    </li>
+                    <li>
+                        <h3><span class="check">✔</span> Avoid Public Wi-Fi</h3>
+                        <p>If you must use it, don't log into banks. Or use a VPN.</p>
+                    </li>
+                    <li>
+                        <h3><span class="check">✔</span> Don’t Panic</h3>
+                        <p>Security is about habits, not fear.</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <footer class="outro">
+                <p>Built to make the internet safer.</p>
+            </footer>
+
+        </article> <aside class="diagram-column">
+            <div class="diagram-stage">
+                
+                <div class="network-map" aria-hidden="true">
+                    
+                    <div class="icon-box" id="user">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>You</span>
+                    </div>
+
+                    <div class="wire">
+                        <div class="packet"></div> 
+                    </div>
+
+                    <div class="icon-box" id="server">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+                        <span>Server</span>
+                    </div>
+                    
+                    <div class="icon-box hidden" id="hacker">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M12 2v2"/><path d="M12 6v6"/><rect x="8" y="14" width="8" height="8" rx="2"/></svg>
+                        <span style="color:#fb7185">Hacker</span>
+                    </div>
+                </div>
+                
+                
+                <div id="status-text" class="status-box" aria-live="polite">Waiting for input...</div>
+            
+            </div>
+        </aside>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
